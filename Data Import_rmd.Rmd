@@ -59,6 +59,30 @@ pups_df = read_csv("data/FAS_pups.csv")
 pups_df = janitor::clean_names(pups_df)
 ```
 
+## Lets read other file formats. 
+
+Read an excel file. 
+```{r}
+## first load the package
+library(readxl)
+
+#then set up a relative path
+mlb_df = read_excel("data/mlb11.xlsx")
+
+# check if it worked
+mlb_df
+```
+Read a SAS file. 
+```{r}
+## first load the package
+library(haven)
+
+# then set up a relative path
+pulse_df = read_sas("data/public_pulse_data.sas7bdat")
+pulse_df
+```
+
+
 
 
 

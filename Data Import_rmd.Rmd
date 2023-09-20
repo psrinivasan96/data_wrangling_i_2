@@ -1,5 +1,7 @@
 ---
-title: "Data Import"
+title: "Data Wrangling I - Data Import"
+author: Pavithra Srinivasan
+date: September 19, 2023
 output: github_document
 ---
 
@@ -7,7 +9,7 @@ output: github_document
 library(tidyverse)
 ```
 
-## Read in some data
+## Reading and Importing Data
 
 Lets import the 'FAS_litters.csv' csv using a relative path. 
 ```{r}
@@ -63,7 +65,7 @@ pups_df = janitor::clean_names(pups_df)
 
 Read an excel file. 
 ```{r}
-## first load the package
+## first load the package (can also load it under the first code chunk)
 library(readxl)
 
 #then set up a relative path
@@ -74,14 +76,26 @@ mlb_df
 ```
 Read a SAS file. 
 ```{r}
-## first load the package
 library(haven)
-
-# then set up a relative path
 pulse_df = read_sas("data/public_pulse_data.sas7bdat")
 pulse_df
 ```
 
+## Comparison with BASE R
+read.csv instead of read_csv
+important to note: Dont use read.csv. This is just for comparison. 
+
+```{r}
+litters_base = read.csv("data/FAS_litters.csv")
+litters_readr = read_csv("data/FAs_litters.csv")
+
+litters_base
+litters_readr
+
+## base r is just more difficult to look at, and it shows the whole data set without proper organization. 
+```
+
+## Exporting Data
 
 
 

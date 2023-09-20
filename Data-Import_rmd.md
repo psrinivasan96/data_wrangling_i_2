@@ -164,4 +164,23 @@ litters_df = read_csv("data/FAS_litters.csv", na = c("NA", 19))
 
 Check out: ‘?read_csv()’ for more information.
 
-\`\`\`
+## Learning Assessment
+
+Repeat the data import process for pups.
+
+``` r
+pups_df = read_csv("data/FAS_pups.csv")
+```
+
+    ## Rows: 313 Columns: 6
+    ## ── Column specification ────────────────────────────────────────────────────────
+    ## Delimiter: ","
+    ## chr (1): Litter Number
+    ## dbl (5): Sex, PD ears, PD eyes, PD pivot, PD walk
+    ## 
+    ## ℹ Use `spec()` to retrieve the full column specification for this data.
+    ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+
+``` r
+pups_df = janitor::clean_names(pups_df)
+```

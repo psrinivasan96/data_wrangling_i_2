@@ -390,4 +390,10 @@ litters_readr
 ## base r is just more difficult to look at, and it shows the whole data set without proper organization. 
 ```
 
-## Exporting Data
+## Exporting Data to a csv.
+
+Export the mlb sub-table.
+
+``` r
+write_csv(mlb_df, "data/mlb_subtable.csv")
+```
